@@ -5,6 +5,11 @@ class amc():#assest management company
     def add_funds_list(self,fundslist):
         self.funds_list = fundslist #list of mutualFund objects
 
+    def print_funds_list(self):
+        print("The funds under {self.mf_name} are the following : ")
+        for mf in self.funds_list:
+            print(mf.fundName) #accessing the attribute of mutual Fund object
+
     def show_details(self):
         print(f"{self.amc_name} was setup on {self.setup_date}. There are total {len(self.funds_list)} funds provided by this AMC. \nFollowing is the list of the mutual funds of this amc.")
         for fund in self.funds_list:
