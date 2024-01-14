@@ -46,7 +46,9 @@ class amc():#assest management company
 
     def get_amc_desc(self):
         return self.amc_description    
-              
+ #total fund capital managed by a amc             
+ # proportion of whole amc( how much money is in each equity, debt, cash etc)   
+ # how the overall mfunds are working under a particular amc   
 
 
 class mutualFund():
@@ -66,7 +68,11 @@ class mutualFund():
                             "cash":cash_ratio}
     def add_equity_holdings(self,eq_holdings):
         self.holdings = eq_holdings #dictinary of holdings with their ratio
-   
+#Instruments of funds
+        #Equity, Tbills, SDL
+
+#Equity
+#sector wise allotment of fund(eg financial,autombile,technology etc)   
 
 # make different classes based on type of mutual fund eg: index fund or tax fund etc
 #! Inheritance
@@ -75,5 +81,35 @@ class mutualFund():
 #         super().__init__(self,name,minsip,category="tax-saving") 
 
 
+class stock():
+    def __init__(self,name):
+        self.stock_name = name
 
+    def add_stock_fundamentals(self,market_cap,pe_ratio,pb_ratio,industry_pe_ratio\
+                               ,debt_to_equity,roe,eps,divident_yield,book_value,face_value,date_recorded):
+        self.market_cap = market_cap
+        self.pe_ratio = pe_ratio
+        self.pb_ratio = pb_ratio
+        self.industry_pe_ratio = industry_pe_ratio
+        self.debt_to_equity = debt_to_equity
+        self.roe = roe
+        self.eps = eps
+        self.divident_yield = divident_yield
+        self.book_value = book_value
+        self.face_value = face_value
+        self.date_recorded = date_recorded
+# future: save a record of stock fundamentals for future too, date wise
+        
+    def print_stock_fundamentals(self):
+        print("Date Recorded : ",self.date_recorded)
+        print("Market Capital : Rs.",self.market_cap)
+        print("P/E Ratio : ",self.pe_ratio)
+        print("P/B Ratio : ",self.pb_ratio)
+        print(f"Industry P/E Ratio {self.industry_pe_ratio}")
+        print(f"ROE : {self.roe}%")
+        print(f"EPS(TTM) : {self.eps}")
+        print(f"Divident Yield : {self.divident_yield}%")
+        print(f"Book Value : {self.book_value}")
+        print(f"face value : {self.face_value}")
+        
 # canara = mutualFund()
