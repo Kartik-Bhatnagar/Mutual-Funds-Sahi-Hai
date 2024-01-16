@@ -17,3 +17,6 @@ nj_amc.print_key_info()
 
 nj_amc.add_funds_list([nj_overnight_mf,nj_balanced_adv_mf,nj_arb_mf,nj_elss_mf,nj_flex_mf])
 nj_amc.print_funds_list()
+
+#adding details of aj arbitage fund
+nj_arb_mf.add_info(100,None,348,"Low","hybrid")
